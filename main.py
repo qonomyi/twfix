@@ -37,7 +37,7 @@ async def on_message(message: discord.Message) -> None:
         return
     if re.search(twitter_post_pattern, message.content) is not None:
         text = fix_tw_link(message.content)
-        text = f"{message.author.mention} >\n{text}"
+        text = f"{message.author.mention}:\n{text}"
         try:
             msg = await message.channel.send(
                 text, silent=True, allowed_mentions=discord.AllowedMentions.none()
