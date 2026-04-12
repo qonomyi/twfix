@@ -1,0 +1,9 @@
+services:
+  twfix:
+    container_name: twfix
+    build: .
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./config.py:/app/config.py:ro
