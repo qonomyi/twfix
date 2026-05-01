@@ -1,6 +1,7 @@
 services:
   twfix:
     container_name: twfix
+    restart: unless-stopped
     build: .
     env_file:
       - path: .env
